@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>
+        calculate 
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1>Calculate</h1>
+           
+         <div>
+            <input type="number" id="num1" placeholder="Enter Number 1">
+                <select name="operator" id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="number" id="num2" placeholder="Enter Number 2">
+            <input type="button" value="=" onclick = 'calculate()'>
+            <br>
+            <br>
+            <h2 id="result"></h2>
+         </div>
+        <script>
+            var num1Input = document.getElementById('num1');
+            var num2Input = document.getElementById('num2');
+            var operator = document.getElementById('operator');
+            var result = document.getElementById('result');
+            var button =  document.getElementById("btn");
+            var button2 = document.getElementById("btn2");
+
+           function calculate(){
+            console.log(num1Input.value);
+            console.log(num2Input.value);
+
+            if(num1Input.value ==="" || num2Input.value===""){
+                alert('Make surenyou have selected a number');
+                result.innerHTML="Please enter both numbers";
+            }
+            else{
+                if(operator.value==='-'){
+                result.innerHTML = parseInt(num1Input.value) - parseInt(num2Input.value);
+                }
+                else if(operator.value==="*"){
+                result.innerHTML = parseInt(num1Input.value) *parseInt(num2Input.value);
+                }
+                else if(operator.value==="/"){
+                    result.innerHTML = parseInt(num1Input.value) / parseInt(num2Input.value);
+                    }
+                else{
+                result.innerHTML = parseInt(num1Input.value) + parseInt(num2Input.value);
+                }
+            }
+            }
+
+        </script>
+</body>
+</html>
